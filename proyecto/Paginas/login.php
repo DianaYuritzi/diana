@@ -29,7 +29,7 @@
 <meta name="viwport" content="width=device-width, initial-scal=1,maximum-scale=1, height=device-height, user-scale=true/false">
 <style >
   h1{
-     color: red;
+     color: blue;
   }
 </style>
 
