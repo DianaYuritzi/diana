@@ -10,7 +10,7 @@
 <meta name="viwport" content="width=device-width, initial-scal=1,maximum-scale=1, height=device-height, user-scale=true/false">
 <style >
   h1{
-     color: red;
+     color: blue;
   }
   h2{
      color: white;
@@ -18,7 +18,7 @@
   table{
 margin-left: 5%;
 margin-right: 5%;
-background-color: brown; opacity: 0.9;
+background-color: blue; opacity: 0.9;
 
   }
   .texto{
