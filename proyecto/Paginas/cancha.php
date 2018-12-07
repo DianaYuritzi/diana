@@ -41,8 +41,9 @@ if (isset($_POST["registrar"])) {
 <title>Squash Tolcayuca</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="styles.css" rel="stylesheet" type="text/css" />
-<link href="resto.css" rel="stylesheet" type="text/css" />
+<link href="paginas/styles.css" rel="stylesheet" type="text/css" />
+<link href="paginas/resto.css" rel="stylesheet" type="text/css" />
+<link href="paginas/estiloss.css" rel="stylesheet" type="text/css" />
 <meta name="viwport" content="width=device-width, initial-scal=1,maximum-scale=1, height=device-height, user-scale=true/false">
 <style >
 .color{
@@ -50,7 +51,7 @@ if (isset($_POST["registrar"])) {
   
     }
   h1{
-     color: red;
+     color: BLUE;
   }
   h2{
      color: white;
@@ -73,22 +74,6 @@ float: right;
 </head>
 <body>
   <header class="clearfix">
-    <div class="container">
-            <div class="header-left">
-                <h1>Squash Tolcayuca</h1>
-            </div>
-            <div class="header-right">
-                <label for="open">
-                    <span class="hidden-desktop"></span>
-                </label>
-                <input type="checkbox" name="" id="open">
-                <nav>
-                    <a href="cancha.html">Cancha</a>
-                    <a href="torneo.html">Torneo</a>
-                    <a href="pefil.html">Perfil</a>
-                    <a href="sesion.html">Cerrar Sesión</a>
-            </div>
-        </div>
     </header>
 
 
@@ -99,15 +84,16 @@ float: right;
    
               <td class="color" class="t"> CANCHA: </td>
               <td align="left"> <select name="cancha"  style="width:200px;height:20px">
-<option value="1"> Cancha 1 </option> 
-<option value="2"> Cancha 2 </option> 
-<option value="3"> Ambas </option>
+<option value="1"> Cancha 1 </option>
+<!--ACTIVAR SI ESTAN DISPONIBLES-->
+<!--<option value="2"> Cancha 2 </option> 
+<option value="3"> Ambas </option>-->
 </td>
 
 </select>
 </tr>
        <tr align="center">
-    <td class="color" > NO° JUGADORES: </td>
+    <td class="color" > NOÂ° JUGADORES: </td>
        <td align="left"><input id="play" name="play" type="number" value=""  style="width:200px;height:20px" min="1" max="4"></td></tr>
         <tr align="center">
            <td class="color" > TELEFONO: </td>
