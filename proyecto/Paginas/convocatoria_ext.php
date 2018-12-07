@@ -5,11 +5,11 @@
 <title>Squash Tolcayuca</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="styles.css" rel="stylesheet" type="text/css" />
+<link href="paginas/styles.css" rel="stylesheet" type="text/css" />
 <meta name="viwport" content="width=device-width, initial-scal=1,maximum-scale=1, height=device-height, user-scale=true/false">
 <style >
   h1{
-     color: red;
+     color: #2E86C1;;
   }
 </style>
 
@@ -32,7 +32,7 @@ $(document).ready(function() {
 });
 </script>
 
-<link href="images/style.css" rel="stylesheet" type="text/css" />
+<link href="paginas/images/style.css" rel="stylesheet" type="text/css" />
 
 
 <!-- Pirobox setup and styles end-->
@@ -44,32 +44,44 @@ $(document).ready(function() {
 
 <!-- header ends -->
         <!-- content begins -->
-        		<div class="cont_top"></div>
-       			<div id="content">
+        <br>
+        <br>
+        		
+
                 <div style="height:10px"></div>
                 	<div class="row">
                    	  <div class="box_img2">
                         
 
-                       	<center><h1>Convocatoria 1</h1></center>
-                           <a href="images/gallery_big1.jpg"  class="pirobox_gal1" title="1st Project Image"> 
-                            <center><img src="images/img31.jpg" width="90%" /></a></center><
+                       	<center><h1> Convocatoria 1</h1></center>
+                           <center><a href="images/gallery_big1.jpg"  class="pirobox_gal1" title="1st Project Image"> </center>
+                            <center><img src="paginas/images/img31.jpg" width="90%" /></a></center>
+                       	<div style="height:15px"></div>                   
+                      </div>
+                      <div class="box_razd"></div>
+                      
+                                         	  <div class="box_img2">
+                        
+
+                       	<center><h1> Convocatoria 2</h1></center>
+                           <center><a href="images/gallery_big1.jpg"  class="pirobox_gal1" title="1st Project Image"> </center>
+                            <center><img src="paginas/images/pro1.jpg" width="105%" /></a></center>
                        	<div style="height:15px"></div>                   
                       </div>
                       <div class="box_razd"></div>
                       
                       <div class="box_img2">
-                       	<center><h1>Convocatoria 2</h1></center>
-                        <a href="images/gallery_big2.jpg" class="pirobox_gal1" title="2nd Project Image">
-                          <center><img src="images/img32.jpg" width="90%" /></a></center>
+                       	<center><h1>Convocatoria 3</h1></center>
+                        <a href="paginas/images/gallery_big2.jpg" class="pirobox_gal1" title="2nd Project Image">
+                          <center><img src="paginas/images/img32.jpg" width="90%" /></a></center>
                           	<div style="height:15px"></div>
                              </div>
                       <div class="box_razd"></div>
                       
                       <div class="box_img2">
-                       	<center><h1>Convocatoria 3</h1></center>
-                        <a href="images/gallery_big3.jpg" class="pirobox_gal1"  title="3rd Project Image">
-                          <center><img src="images/img33.jpg" width="100%" /></a></center>
+                       	<center><h1>Convocatoria 4</h1></center>
+                        <a href="paginas/images/gallery_big3.jpg" class="pirobox_gal1"  title="3rd Project Image">
+                          <center><img src="paginas/images/img33.jpg" width="100%" /></a></center>
                           	<div style="height:15px"></div>
 
                    	  </div>
@@ -84,7 +96,7 @@ $(document).ready(function() {
     
       <div style="clear: both;"></div>
     </div>
-    <div class="cont_bot"></div>
+    
     
 <!-- bottom end --> 
 <!-- footer begins -->
