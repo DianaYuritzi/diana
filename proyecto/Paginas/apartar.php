@@ -9,7 +9,7 @@
 <meta name="viwport" content="width=device-width, initial-scal=1,maximum-scale=1, height=device-height, user-scale=true/false">
 <style >
   h1{
-     color: red;
+     color: #2E86C1;
   }
 </style>
 </head>
@@ -30,7 +30,7 @@
                             <div  class="box_us_l">
                             </div>
                             <div  class="box_us_r">
-                               Por favor seleccione el día y la hora en la que desea ocupar la cancha.
+                               Por favor seleccione el dia y la hora en la que desea ocupar la cancha.
                             </div>
                             <div style="clear: both; height:15px;"></div>
                         </div>
