@@ -17,7 +17,7 @@ html{
     font-size: 12px;
 }
 body{
-    background: url('brushed_alu.png');
+    background: url('bg.jpg');
 }
 .clearfix:before,
 .clearfix:after {
@@ -241,9 +241,9 @@ section{
 }
  
 /* Landscape phones and down */
-@media screen and ( min-width: 360px) and (max-width: 800px) {
+@media screen and ( min-width: 360px) and (max-width: 1200px) {
     body{
-        padding: 0 .5em;
+        padding: 0 .1em;
     }
     .container{
         width: 90%;
@@ -254,7 +254,7 @@ section{
         -webkit-transition: all .3s ease;
     }
     input[type="checkbox"]:checked + nav{
-        height: 205px;
+        height: 240px;
     }
     nav>a{
         padding: 0 1em;
@@ -297,11 +297,8 @@ section{
     }
 }
 
-//IMAGENES Y CUERPO//
-{
-border: 0;
-margin: 0;
-}
+
+
 
 img
 {
@@ -311,7 +308,7 @@ border: 0px;
 body{
 	font: 12px Arial, Helvetica, sans-serif;
 	color: #000000;
-	background: url(images/bg.jpg) center  #000000;
+	background: url(../paginas/images/bg.jpg) center  #000000;
 	line-height: 19px;
 }
 
@@ -319,7 +316,7 @@ body{
 #main {
 	width: 1014px;
 	margin: 0px auto;
-	background:url(images/main.jpg) right top no-repeat;}
+	background:url(paginas/images/main.jpg) right top no-repeat;}
 
 #header { 
 	width:1014px;
@@ -358,7 +355,7 @@ body{
 	height: 40px;
 	margin-left: 0px;
 	padding-left: 0px;
-	background: url(images/menu.png) left top no-repeat;
+	background: url(paginas/images/menu.png) left top no-repeat;
 }
 
 #buttons a {
@@ -411,7 +408,7 @@ padding-top: 20px
 
 #content{
 	width: 100%;
-	background: #DFDDDD;
+	background: #2E86C1; opacity: 0.9;
 }
 
 .cont_top{
