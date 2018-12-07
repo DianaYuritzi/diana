@@ -2,17 +2,82 @@
   $usuario = "";
   $contra = "";
   $datos = array();
-  if(!empty($_POST["txtUsu"]) && !empty ($_POST["txtContra"])){
-    $usuario = htmlspecialchars($_POST["txtUsu"]);
-    $contra = htmlspecialchars($_POST["txtContra"]);
+  if(!empty($_POST["txtusu"]) && !empty ($_POST["txtcontra"])){
+      
+      
+    $usuario=htmlspecialchars($_POST['txtusu']);
+    $contra=htmlspecialchars($_POST['txtcontra']);
 
-  $cliente = new SoapClient(null, array('uri' => 'http://localhost/', 'location' => 'http://localhost/pra/squash/servicioweb/servicioweb.php'));
+  $cliente = new SoapClient(null, array('uri' => 'http://localhost/', 'location' => 'https://squashtolcayuca.000webhostapp.com/finalsquash/servicioweb/servicioweb.php'));
+  
+  
   $datos = $cliente -> acceso($usuario, $contra);
-    if((int)$datos[0]["CLAVE"] != 0){
-      echo '<script language="javascript">alert("Bienvenido al sistema '.$datos[1]["USUARIO"].', estas accediendo como '.$datos[2]["ROL"].'.")</script>';
+  
+ 
+    if((int)$datos[0]['CLAVE'] != 0){
+        
+        if(!isset($_SESSION['NOMBRE'])){
+            $_SESSION['NOMBRE']=$datos[1]["NOMBRE"];
+            
+        }
+        if(!isset($_SESSION['ID'])){
+            $_SESSION['ID']=$datos[2]["ID"];
+        }
+        
+        if(!isset($_SESSION['NOM'])){
+            $_SESSION['NOM']=$datos[3]["NOM"];
+            
+        }
+         if(!isset($_SESSION['AP'])){
+            $_SESSION['AP']=$datos[4]["AP"];
+            
+        }
+         if(!isset($_SESSION['AM'])){
+            $_SESSION['AM']=$datos[5]["AM"];
+            
+        }
+         if(!isset($_SESSION['EDAD'])){
+            $_SESSION['EDAD']=$datos[6]["EDAD"];
+            
+        }
+         if(!isset($_SESSION['SEXO'])){
+            $_SESSION['SEXO']=$datos[7]["SEXO"];
+            
+        }
+         if(!isset($_SESSION['MAIL'])){
+            $_SESSION['MAIL']=$datos[8]["MAIL"];
+            
+        }
+         if(!isset($_SESSION['USU'])){
+            $_SESSION['USU']=$datos[9]["USU"];
+            
+        }
+         if(!isset($_SESSION['CONTRA'])){
+            $_SESSION['CONTRA']=$datos[10]["CONTRA"];
+            
+        }
+         if(!isset($_SESSION['ADMIN'])){
+            $_SESSION['ADMIN']=$datos[11]["ADMIN"];
+            
+        }
+        if(!isset($_SESSION['CATEGORIA'])){
+            $_SESSION['CATEGORIA']=$datos[12]["CATEGORIA"];
+            
+        }
+
+        
+        
+
+      if((int)$datos[11]['ADMIN'] == 1){
+          echo '<script language="javascript">alert("Bienvenido al sistema '.$datos[1]['NOMBRE'].', estas accediendo como Administrador.");document.location.href="?op=inicio_sesion";</script>';
+      }else{
+          echo '<script language="javascript">alert("Bienvenido al sistema '.$datos[1]['NOMBRE'].', estas accediendo como Jugador.");document.location.href="?op=inicio_sesion";</script>';
+      }
+      
+      
     } else {
       $datos[0] = 0;
-      echo '<script language="javascript">alert("Acceso denegado, no es digno.")</script>';
+      echo '<script language="javascript">alert("Acceso denegado.")</script>';
     }
   }
 ?>
@@ -23,13 +88,13 @@
 <title>Squash Tolcayuca</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="styles.css" rel="stylesheet" type="text/css" />
-<link href="login.css" rel="stylesheet" type="text/css" />
+<link href="paginas/styles.css" rel="stylesheet" type="text/css" />
+<link href="paginas/login.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<meta name="viwport" content="width=device-width, initial-scal=1,maximum-scale=1, height=device-height, user-scale=true/false">
+<meta name="viwport" content="width=device-width, initial-scal=1,maximum-scale=1,height=device-height, user-scale=true/false">
 <style >
   h1{
-     color: blue;
+     color: #2E86C1;
   }
 </style>
 
@@ -50,13 +115,13 @@
 <p class="form_label1">USUARIO</p>
 
 
-<input type="text" placeholder="Enter Email" name="txtUsu"><br>
+<input type="text" placeholder="Enter Email" name="txtusu"><br>
 <br>
-<p class="form_label1">CONTRASEÑA</p>
-<input type="password" placeholder="**********"  name="txtContra">
+<p class="form_label1">CONTRASEÃ‘A</p>
+<input type="password" placeholder="**********"  name="txtcontra">
 <br><br>
 <p><input type="submit" value="INGRESAR"></p>
-<p><a href="registro.html"><input type="button" value="REGISTRAR"></a></p>
+<p><input type="button" value="REGISTRAR"></p>
 
 
 </form>
