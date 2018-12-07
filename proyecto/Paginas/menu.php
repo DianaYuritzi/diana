@@ -1,7 +1,16 @@
-﻿  <!DOCTYPE html>
+  <!DOCTYPE html>
   <html>
   <head>
       <title>Menu</title>
+
+      <meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="styles.css" rel="stylesheet" type="text/css" />
+<link href="styless.css" rel="stylesheet" type="text/css" />
+<link href="resto.css" rel="stylesheet" type="text/css" />
+
+<meta name="viwport" content="width=device-width, initial-scal=1,maximum-scale=1, height=device-height, user-scale=true/false">
+
   </head>
   <body>
     <header class="clearfix">
@@ -21,6 +30,7 @@
                   <a href="?op=Contacto">Contacto</a>
                   <a href="?op=registro">Registro</a>
                   <a href="?op=login">Login</a>
+                 <!--CERRAR <a href="?op=sesion">Cerrar Sesión</a>-->
                 </nav>
             </div>
         </div>
