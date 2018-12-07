@@ -1,5 +1,6 @@
 <?php 
 $datos = array();
+$dt = array();
 $nombre = "";
 $ap = "";
 $am = "";
@@ -9,7 +10,12 @@ $mail = "";
 $usuario = "";
 $contra = "";
 $categoria = "";
-if (isset($_POST["saveForm"])) {
+
+
+$cliente = new SoapClient(null, array('uri' => 'http://localhost/', 'location' => 'https://squashtolcayuca.000webhostapp.com/finalsquash/servicioweb/servicioweb.php'));
+ $dt = $cliente -> categorias();
+
+if (isset($_POST["registrar"])) {
   if (!empty($_POST["txtName"]) && !empty($_POST["txtAp"]) && !empty($_POST["txtAm"]) && !empty($_POST["txtEdad"]) && !empty($_POST["txtSexo"]) && !empty($_POST["txtMail"]) && !empty($_POST["txtUsuario"]) && !empty($_POST["txtContra"]) && !empty($_POST["txtCategoria"])) {
     $nom = htmlspecialchars($_POST["txtName"]);
     $ap = htmlspecialchars($_POST["txtAp"]);
@@ -21,7 +27,7 @@ if (isset($_POST["saveForm"])) {
     $contra = htmlspecialchars($_POST["txtContra"]);
     $cat = htmlspecialchars($_POST["txtCategoria"]);
 
-    $cliente = new SoapClient(null, array('uri' => 'http://localhost/', 'location' => 'http://localhost/pra/squash/servicioweb/servicioweb.php'));
+    
 
     $datos = $cliente -> registrar($nom, $ap, $am, $edad, $sexo, $mail, $usuario, $contra, $cat);
     if ((int)$datos[0]["CLAVE"] != 0) {
@@ -41,8 +47,9 @@ if (isset($_POST["saveForm"])) {
 <title>Squash Tolcayuca</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="styles.css" rel="stylesheet" type="text/css" />
-<link href="estiloss.css" rel="stylesheet" type="text/css" />
+<link href="paginas/styles.css" rel="stylesheet" type="text/css" />
+<link href="paginas/estiloss.css" rel="stylesheet" type="text/css" />
+<link href="paginas/resto.css" rel="stylesheet" type="text/css" />
 <meta name="viwport" content="width=device-width, initial-scal=1,maximum-scale=1, height=device-height, user-scale=true/false">
 <style>
 
@@ -51,13 +58,14 @@ if (isset($_POST["saveForm"])) {
   
     }
     h1{
-        color: red;
+        color: #2E86C1;
     }
- table{
+  table{
 
-background-color: brown;
+background-color: #2E86C1; opacity: 0.9;
+margin-left: 25%;
+
   }
-  
     
 </style>
 </head>
@@ -68,78 +76,70 @@ background-color: brown;
         <br>
         <br>
 
-        	<form  name="registrar" method="POST">
+        		 <form  name="registrar" method="POST">
+             <table  align="center" class="tabla" width="50%" >
+            <br>
+             <tr align="center">
+    <td class="color" > NOMBRE: </td>
+       <td align="left"><input id="txtName" name="txtName" type="text" value=""  style="width:200px;height:20px"></td></tr>
+        <tr align="center">
+           <td class="color" > APELLIDO PATERNO: </td>
+       <td align="left"><input id="txtAp" name="txtAp" type="text" value=""  style="width:200px;height:20px" ></td></tr>
+      <tr align="center">
+           <td class="color" > APELLIDO MATERNO: </td>
+       <td align="left"><input id="txtAm" name="txtAm" type="text" value=""  style="width:200px;height:20px" ></td></tr>
+        <tr align="center">
+           <td class="color" > EDAD: </td>
+       <td align="left"><input id="txtEdad" name="txtEdad" type="number" value=""  style="width:200px;height:20px" ></td></tr>
+        <tr align="center">
+         <td class="color" class="t"> SEXO: </td>
+              <td align="left"> <select id="txtSexo" name="txtSexo"  style="width:200px;height:20px">
+<option value="Masculino"> Masculino </option> 
+<option value="Femenino"> Femenino </option> 
 
-  <tr><div>
-    <label class="desc" id="title1" for="Field1">NOMBRE</label>
-    <div>
-      <input id="Field1" name="txtName" type="text" class="field text fn" value="" size="8" tabindex="1" placeholder="Escribe tu nombre...">
-    </div>
-</div>
-  <div>
-    <label class="desc" id="title1" for="Field1">APELLIDO PATERNO</label>
-    <div>
-      <input id="Field2" name="txtAp" type="text" class="field text fn" value="" size="8" tabindex="1" placeholder="Escribe tu apellido paterno...">
-    </div>
-  </div>
-  <div>
-    <label class="desc" id="title1" for="Field1">APELLIDO MATERNO</label>
-    <div>
-      <input id="Field2" name="txtAm" type="text" class="field text fn" value="" size="8" tabindex="1" placeholder="Escribe tu apellido materno...">
-    </div>
-  </div>
+</td>
 
-     <div>
-    <label class="desc" id="title1" for="Field1">EDAD</label>
-    <div>
-      <input id="Field2" name="txtEdad" type="text" max="10" class="field text fn" value="" size="8" tabindex="1" placeholder="Escribe tu telefono...">
-    </div>
-  </div>
-
- <div>
-    <label class="desc" id="title1" for="Field1">SEXO</label>
-    <div>
-      <input id="Field2" name="txtSexo" type="text" max="10" class="field text fn" value="" size="8" tabindex="1" placeholder="Escribe tu telefono...">
-    </div>
-  </div>
-
- <div>
-    <label class="desc" id="title1" for="Field1">MAIL</label>
-    <div>
-      <input id="Field2" name="txtMail" type="text" max="10" class="field text fn" value="" size="8" tabindex="1" placeholder="Escribe tu telefono...">
-    </div>
-  </div>
-
- <div>
-    <label class="desc" id="title1" for="Field1">USUARIO</label>
-    <div>
-      <input id="Field2" name="txtUsuario" type="text" max="10" class="field text fn" value="" size="8" tabindex="1" placeholder="Escribe tu telefono...">
-    </div>
-  </div>
-
-  <div>
-    <label class="desc" id="title1" for="Field1">CONTRASENA</label>
-    <div>
-      <input id="Field2" name="txtContra" type="text" class="field text fn" value="" size="8" tabindex="1" placeholder="Escribe tu correo...">
-    </div>
-  </div>
-
- <div>
-    <label class="desc" id="title1" for="Field1">CATEGORIA</label>
-    <div>
-      <input id="Field2" name="txtCategoria" type="text" max="10" class="field text fn" value="" size="8" tabindex="1" placeholder="Escribe tu telefono...">
-    </div>
-  </div>
+</select>
+</tr>
+       <tr align="center">
+           <td class="color" > MAIL: </td>
+       <td align="left"><input id="txtMail" name="txtMail" type="text" value=""  style="width:200px;height:20px" ></td></tr>
+       
+   <tr align="center">
+           <td class="color" > USUARIO: </td>
+       <td align="left"><input id="txtUsuario" name="txtUsuario" type="text" value=""  style="width:200px;height:20px" ></td></tr>
+        <tr align="center">
+           <td class="color" > CONTRASEÃ‘A: </td>
+       <td align="left"><input id="txtContra" name="txtContra" type="password" value=""  style="width:200px;height:20px" ></td></tr>
+       <tr align="center">
+   
+              <td class="color" class="t"> CATEGORIA: </td>
+              <td align="left"> <select id="txtCategoria" name="txtCategoria"  style="width:200px;height:20px">
+<option value=1> Infantil </option> 
+<option value=2> Primera fuerza </option> 
+<option value=3> Segunda fuerza </option> 
+<option value=4> Tercera fuerza </option> 
+<option value=5> Cuarta fuerza </option> 
+<option value=6> Quinta fuerza </option> 
+<option value=7> Master A </option> 
+<option value=8> Master B </option> 
+<option value=9> Master C </option> 
+<option value=10> Master D </option> 
+</td>
+</select>
+</tr>
 
 
- <div >
-    <div >
-      <input id="saveForm" name="saveForm" type="submit" value="REGISTRAR" >
-    </div>
-  </div>
 
-    </tr>
-  </form>
+
+         <tr align="center">
+         <td> </td>
+         <td align="left"> <input type="submit" name="registrar" value="REGISTRAR"  style="width:150px;height:30px"></td>
+
+       </tr>
+   
+</table>
+   </form>
 
 
               </body>
