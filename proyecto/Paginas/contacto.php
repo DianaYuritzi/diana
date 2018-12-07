@@ -5,24 +5,26 @@
 <title>Squash Tolcayuca</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="styles.css" rel="stylesheet" type="text/css" />
-<link href="resto.css" rel="stylesheet" type="text/css" />
+<link href="paginas/styles.css" rel="stylesheet" type="text/css" />
+<link href="paginas/resto.css" rel="stylesheet" type="text/css" />
 <meta name="viwport" content="width=device-width, initial-scal=1,maximum-scale=1, height=device-height, user-scale=true/false">
 <style >
   h1{
-     color: red;
+     color: #2E86C1;;
   }
   h2{
-     color: white;
+     color: black;
   }
   table{
 
-background-color: brown; opacity: 0.9;
+background-color: #2E86C1; opacity: 0.9;
+margin-left: 10%;
 
   }
   .texto{
    
   font-size: 1.5em;
+  color:white;
 
 float: right;
    
@@ -33,17 +35,17 @@ float: right;
 
 
   <br>
-  <table  align="center" class="tabla" width="100%">
+  <table  align="center" class="tabla" width="80%">
     <tr>
-      <td align="left"> <img src="images/sqTol.png" width="100%" ></td>
-      <td class="texto"> <h2>Información General</h2><br>
-      <img src="images/fish_us2.gif" alt="">       Telefono: 1(234) 567 8910<br><br>
-      <img src="images/fish_us1.gif" alt="">       Calle Allende #7, Colonia El Cerrito, Tolcayuca Hidalgo<br><br>
-      <img src="images/fish_us3.gif" alt="">       General: SquashTolcayuca@gmail.com
+      <td align="left"> <img src="paginas/images/sqTol.png" width="100%" ></td>
+      <td class="texto"> <h2> <center><b>InformaciÃ³n General</b></center></h2><br>
+      <img src="paginas/images/fish_us2.gif" alt="">       Telefono: 1(234) 567 8910<br><br>
+      <img src="paginas/images/fish_us1.gif" alt="">       Calle Allende #7, Colonia El Cerrito, Tolcayuca Hidalgo<br><br>
+      <img src="paginas/images/fish_us3.gif" alt="">       General: SquashTolcayuca@gmail.com
     </td>
     </tr>
   </table>
-  <div class="cont_bot"></div>
+  
             
   </body>
 </html>
