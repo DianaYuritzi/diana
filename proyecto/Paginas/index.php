@@ -4,25 +4,29 @@
 <title>Squash Tolcayuca</title>
 <meta name="keywords" content="" />
 <meta name="description" content="" />
-<link href="styles.css" rel="stylesheet" type="text/css" />
-<link href="styless.css" rel="stylesheet" type="text/css" />
-<link href="resto.css" rel="stylesheet" type="text/css" />
+<link href="paginas/styles.css" rel="stylesheet" type="text/css" />
+<link href="paginas/styless.css" rel="stylesheet" type="text/css" />
+<link href="paginas/resto.css" rel="stylesheet" type="text/css" />
+
 <meta name="viwport" content="width=device-width, initial-scal=1,maximum-scale=1, height=device-height, user-scale=true/false">
 <style >
+.color{
+    color:white;
+}
   h1{
-     color: red;
+     color: #2E86C1;
   }
   h2{
-     color: white;
+     color: black;
   }
   table{
 
-background-color: brown; opacity: 0.9;
+background-color:  #2E86C1; opacity: 0.9;
 
   }
   .texto{
    
-  font-size: 1.5em;
+  font-size: 2.0em;
 
 float: right;
    
@@ -30,7 +34,7 @@ float: right;
 </style>
 
 </head>
-<body>
+<body class="color">
 
 
 <div class="wrapper">
@@ -46,35 +50,35 @@ float: right;
         <div class="info top-left">
           <h3>JUEGA CON AMIGOS</h3>
         </div>
-       <img src="images/header2.jpg" />
+       <img src="paginas/images/header2.jpg" />
       </article>
 
       <article>
         <div class="info bottom-right">
           <h3>HAZ EJERCICIO</h3>
         </div>
-        <img  src="images/header4.jpg"/>
+        <img  src="paginas/images/header4.jpg"/>
       </article>
 
       <article>
         <div class="info bottom-left">
           <h3>DIVIERTETE</h3>
         </div>
-        <img src="images/header3.jpg" />
+        <img src="paginas/images/header3.jpg" />
       </article>
 
       <article>
         <div class="info top-right">
           <h3>ENTRENA</h3>
         </div>
-        <img src="images/header5.jpg" />
+        <img src="paginas/images/header5.jpg" />
       </article>
 
       <article>
         <div class="info bottom-left">
           <h3>ESFUERZATE</h3>
         </div>
-        <img src="images/header6.jpg" />
+        <img src="paginas/images/header6.jpg" />
       </article>
     </div>
     <!-- .inner -->
@@ -101,16 +105,18 @@ float: right;
 </div>
 
         <!-- content begins -->
-        	<table  align="center" class="tabla" width="100%">
+        <center><table class="tabla" width="70%">
     <tr>
-      <td align="left"> <img src="images/img8.jpg" width="100%"></td>
-      <td class="texto"> <h2>Bienvenido a Squash Tolcayuca</h2><br>
-       El squash es un deporte de raqueta que se practica en interiores con dos jugadores y una pelota de goma que puede tener distintos grados de velocidad o rebote. El grado de velocidad y/o rebote se identifica en el color de la pelota.
+      <td align="left"> <img src="paginas/images/img8.jpg" width="100%"></td>
+      <td class="texto"> <h2> <center> <b>Bienvenido a Squash Tolcayuca</b> </center></h2><br>
+      <p>El squash es un deporte de raqueta que se practica en interiores con dos jugadores y una pelota de goma que puede tener distintos grados de velocidad o rebote. El grado de velocidad y/o rebote se identifica en el color de la pelota.</p>
+          
     </td>
     </tr>
   </table>
-  <div class="cont_bot"></div>
+  </center>	
+ 
             
   </body>
-            </body>
+        
 </html>
