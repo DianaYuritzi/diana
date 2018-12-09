@@ -69,7 +69,7 @@
         
 
       if((int)$datos[11]['ADMIN'] == 1){
-          echo '<script language="javascript">alert("Bienvenido al sistema '.$datos[1]['NOMBRE'].', estas accediendo como Administrador.");document.location.href="?op=inicio_sesion";</script>';
+          echo '<script language="javascript">alert("Bienvenido al sistema '.$datos[1]['NOMBRE'].', estas accediendo como Administrador.");document.location.href="?op=index";</script>';
       }else{
           echo '<script language="javascript">alert("Bienvenido al sistema '.$datos[1]['NOMBRE'].', estas accediendo como Jugador.");document.location.href="?op=inicio_sesion";</script>';
       }
@@ -101,6 +101,9 @@
 </head>
 <body>
 
+
+
+
 <br>
 <br>
 <br>
@@ -124,10 +127,112 @@
 <p><input type="button" value="REGISTRAR"></p>
 
 
+
 </form>
 </div>
 <br>
 <br>
+
+
+
+<script>
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI();
+    } else {
+      // The person is not logged into your app or we are unable to tell.
+      document.getElementById('status').innerHTML = 'Inicia ' +
+        'en esta app.';
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{240487886848323}',
+      cookie     : true,  // enable cookies to allow the server to access 
+                          // the session
+      xfbml      : true,  // parse social plugins on this page
+      version    : 'v2.8' // use graph api version 2.8
+    });
+
+    // Now that we've initialized the JavaScript SDK, we call 
+    // FB.getLoginStatus().  This function gets the state of the
+    // person visiting this page and can return one of three states to
+    // the callback you provide.  They can be:
+    //
+    // 1. Logged into your app ('connected')
+    // 2. Logged into Facebook, but not your app ('not_authorized')
+    // 3. Not logged into Facebook and can't tell if they are logged into
+    //    your app or not.
+    //
+    // These three cases are handled in the callback function.
+
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+
+  };
+
+  // Load the SDK asynchronously
+  
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.2&appId=240487886848323&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+
+
+
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    console.log(':DDDDD.... ');
+    FB.api('/me', function(response) {
+      console.log('Hola!!!!!!!: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Gracias por logearte, ' + response.name + '!';
+         document.location.href="paginas/fbpa/inicio_sesion.php";
+    });
+  }
+</script>
+
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
+
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+
+<div id="status">
+</div>
+
+
+
+
+
 
     
               <script>
@@ -152,6 +257,8 @@ $(function() {
   $(.'open-menu').height($(window).height());
 });
 </script>
-
             </body>
 </html>
+
+
+
